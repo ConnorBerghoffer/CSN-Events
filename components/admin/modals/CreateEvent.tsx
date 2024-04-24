@@ -15,7 +15,6 @@ import {
   useToast,
 } from '@chakra-ui/react';
 import { createClient } from '@supabase/supabase-js';
-import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import usePlacesAutocomplete, {
   getGeocode,
@@ -155,12 +154,6 @@ const CreateEvent = (props: Props) => {
             </FormControl>
             <FormControl mt={4}>
               <FormLabel>Date</FormLabel>
-              <DatePicker
-                selected={date}
-                onChange={(date: Date) => setDate(date)}
-                showTimeSelect
-                dateFormat="Pp"
-              />
             </FormControl>
             <FormControl mt={4}>
               <FormLabel>Image Upload</FormLabel>
