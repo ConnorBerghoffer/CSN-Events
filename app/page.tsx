@@ -21,8 +21,9 @@ export default function Home() {
         router.replace('/login');
       } else if (!userData.user) {
         router.replace('/login');
+      } else {
+        setLoading(false);
       }
-      setLoading(false);
     }
     checkUser();
   }, [router]);

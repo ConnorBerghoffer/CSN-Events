@@ -45,7 +45,7 @@ if (error) {
     });
   } else {
     // Redirect based on role
-    const path = data.role_id === 2 ? '/dashboard' : '/home'; // Assuming '2' is the ID for 'admin'
+    const path = data.role_id === 2 ? '/' : '/'; // Assuming '2' is the ID for 'admin'
     router.push(path);
   }
 }
