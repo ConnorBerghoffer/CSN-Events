@@ -9,12 +9,7 @@ export const CreateEventModal = ({ isOpen, closeModal }: { isOpen: boolean; clos
   const [eventData, setEventData] = useState({ title: '', promoter: '', date: '', location: '', image_url: '' });
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const toast = useToast();
-
-  useEffect(() => {
-    if (isOpen) {
-      // Optional: Reset state or fetch data
-    }
-  }, [isOpen]);
+  useEffect(() => {if (isOpen) {}}, [isOpen]);
 
   const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -69,8 +64,8 @@ export const CreateEventModal = ({ isOpen, closeModal }: { isOpen: boolean; clos
     <AnimatePresence>
       {isOpen && (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center" onClick={closeModal}>
-          <Box className="flex flex-col gap-4" width={'80%'} p={4} bg="white" rounded="md" onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) => e.stopPropagation()} as={motion.div} initial={{ scale: 0.7 }} animate={{ scale: 1 }} exit={{ scale: 0.5 }}>
-            <Box className="w-full flex justify-end"><Button onClick={closeModal} className="mb-4">x</Button></Box>
+          <Box bgColor={'bgCard'} width={'80%'} p={4} bg="white" rounded="md" onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) => e.stopPropagation()} as={motion.div} initial={{ scale: 0.7 }} animate={{ scale: 1 }} exit={{ scale: 0.5 }}>
+            <Box ><Button onClick={closeModal} className="mb-4">x</Button></Box>
             <Input type="file" accept="image/*" onChange={handleImageChange} />
             {imagePreview && <Image src={imagePreview} alt="Preview" />}
             <Flex className="gap-4">

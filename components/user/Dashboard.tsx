@@ -8,7 +8,7 @@ const UserDashboard = (props: Props) => {
     <div className="flex">
     <Sidebar/>
     <div>
-    You Are An User
+    You Are A User
     </div>
   </div>
   )

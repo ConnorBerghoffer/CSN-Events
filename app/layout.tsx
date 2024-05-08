@@ -2,8 +2,9 @@ import { ChakraProvider } from '@chakra-ui/react';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google"
 import "./globals.css";
-import { RoleProvider } from './providers/RoleContext';
 import Sidebar from '@/components/global/Sidebar';
+import {theme} from './theme';
+import ActionBar from '@/components/global/ActionBar';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,12 +17,11 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
   return (
     <html lang="en">
       <body className={inter.className}>
-      <ChakraProvider>
-        <RoleProvider>
+      <ChakraProvider theme={theme}>
           <main>
           {children}
+          <ActionBar/>
           </main>
-        </RoleProvider>
       </ChakraProvider>
       </body>
     </html>
